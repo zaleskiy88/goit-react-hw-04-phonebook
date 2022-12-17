@@ -55,9 +55,6 @@ export const App = () => {
   };
 
   useEffect(() => {
-    const storageContacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(storageContacts);
-
     if (parsedContacts) {
       setContacts(parsedContacts);
     } else {
