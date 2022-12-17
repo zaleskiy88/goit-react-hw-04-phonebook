@@ -55,11 +55,15 @@ export const App = () => {
   };
 
   useEffect(() => {
+    const storageContacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(storageContacts);
+
     if (parsedContacts) {
       setContacts(parsedContacts);
     } else {
       localStorage.setItem('contacts', JSON.stringify(contacts));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
